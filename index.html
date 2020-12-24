@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+				<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<form>
+			<h1>Buscar CEP</h1>
+			<div class="box">
+				<label for="CEP">CEP</label>
+				<input name="CEP" placeholder="informe seu cep">
+				<button type="button" onclick="buscaCep(event)">Buscar</button>
+			</div>
+
+			<div class="box">
+				<label for="Estado">Estado</label>
+				<input name="Estado">
+			</div>
+
+			<div class="box">
+				<label for="Cidade">Cidade</label>
+				<input name="Cidade">
+			</div>
+
+			<div class="box">
+				<label for="Bairro">Bairro</label>
+				<input name="Bairro">
+			</div>
+
+			<div class="box">
+				<label for="Rua">Rua</label>
+				<input name="Rua">
+			</div>
+		</form>
+		<script src="buscacep.js"></script>
+	</body>
+</html>
