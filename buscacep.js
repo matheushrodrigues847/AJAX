@@ -2,22 +2,26 @@
 function buscaCep(event){
 	event.preventDefault();//previne o comportamento normal do botao, que é recarregar a página
 	
-	let inputCep = document.querySelector('input[name=CEP]');
-	let cep = inputCep.value.replace('-','');
+	const inputCep = document.querySelector('input[name=CEP]');
+	const cep = inputCep.value.replace('-','');
 
-	let url = 'http://viacep.com.br/ws/'+cep+'/json/';
+	const url = `http://viacep.com.br/ws/${cep}/json/`;
 
-	let xhr = new XMLHttpRequest();
+	return fetch(url)
+	.then(resposta => resposta.json())
+	.then(data => preencheCampos(data));
 
-	xhr.open('GET',url,true);//true para assincrono
+	//const xhr = new XMLHttpRequest();
 
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState == 4 && xhr.status == 200){
-			preencheCampos(JSON.parse(xhr.responseText));	
-		}
-	}	
+	//xhr.open('GET',url,true);//true para assincrono
 
-	xhr.send();
+	//xhr.onreadystatechange = function(){
+	//	if(xhr.readyState == 4 && xhr.status == 200){
+	//		preencheCampos(JSON.parse(xhr.responseText));	
+	//	}
+	//}	
+
+	//xhr.send();
 
 }
 
